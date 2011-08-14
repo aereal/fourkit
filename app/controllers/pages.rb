@@ -4,7 +4,9 @@ WikiPs.controllers :pages do
 		render 'pages/index'
 	end
 
-	get :show do
+	get :show, :with => :title do
+		@page = Page.first(:title => params[:title], :order => :created_at.desc)
+		render 'pages/show'
 	end
 
 	get :edit do

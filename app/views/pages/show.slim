@@ -1,0 +1,8 @@
+- @title = @page.title
+
+article id=@page.id
+  h1= @page.title
+  ==simple_format(@page.body)
+  nav.local_nav
+    p
+      time pubdate=@page.created_at =time_ago_in_words(@page.created_at) + ' ago'
