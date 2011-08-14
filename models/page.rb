@@ -11,4 +11,8 @@ class Page
 	belongs_to :parent, :class_name => :Page
 
 	scope :titles, all.uniq(&:title)
+
+	def versions
+		self.class.where(:title => self.title)
+	end
 end
