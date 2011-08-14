@@ -7,5 +7,4 @@ article id=@page.id
     p
       time pubdate=@page.created_at =time_ago_in_words(@page.created_at) + ' ago'
     ul.versions
-    - @page.versions.each do |version|
-      li== link_to version.created_at, url_for(:pages, :show, :title => version.title, :id => version.id), :unless => :current
+    == partial 'versions/version', :collection => @page.versions
