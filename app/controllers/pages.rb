@@ -5,7 +5,8 @@ WikiPs.controllers :pages do
 	end
 
 	get :show, :map => '/:title' do
-		@page = Page.first(:title => params[:title], :order => :created_at.desc)
+		@page = Page.first(:title => params[:title], :order => :created_at.desc) or
+			halt 404
 		render 'pages/show'
 	end
 
