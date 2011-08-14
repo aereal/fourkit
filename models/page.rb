@@ -9,4 +9,6 @@ class Page
 	timestamps!
 
 	belongs_to :parent, :class_name => :Page
+
+	scope :titles, all.uniq(&:title)
 end

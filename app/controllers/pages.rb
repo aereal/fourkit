@@ -1,30 +1,12 @@
 WikiPs.controllers :pages do
-  # get :index, :map => "/foo/bar" do
-  #   session[:foo] = "bar"
-  #   render 'index'
-  # end
+	get :index do
+		@pages = Page.all(:order => :created_at.desc).uniq(&:title)
+		render 'pages/index'
+	end
 
-  # get :sample, :map => "/sample/url", :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
+	get :show do
+	end
 
-  # get :foo, :with => :id do
-  #   "Maps to url '/foo/#{params[:id]}'"
-  # end
-
-  # get "/example" do
-  #   "Hello world!"
-  # end
-
-  get :index do
-  end
-
-  get :show do
-  end
-
-  get :edit do
-  end
-
+	get :edit do
+	end
 end
