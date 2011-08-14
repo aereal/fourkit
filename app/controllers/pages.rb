@@ -1,10 +1,10 @@
 WikiPs.controllers :pages do
-	get :index do
+	get :index, :map => '/' do
 		@pages = Page.all(:order => :created_at.desc).uniq(&:title)
 		render 'pages/index'
 	end
 
-	get :show, :map => 'pages/:title' do
+	get :show, :map => '/:title' do
 		@page = Page.first(:title => params[:title], :order => :created_at.desc)
 		render 'pages/show'
 	end
