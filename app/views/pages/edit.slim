@@ -1,0 +1,11 @@
+- @title = "Edit: #{@page.title}"
+
+article id=@page.id
+  h1= @page.title
+  - form_for @page, url_for(:versions, :create, :title => @page.title) do |f|
+    p.error= f.error_messages
+    div
+      == f.hidden_field :parent_id, :value => @page.id
+      == f.hidden_field :title, :value => @page.title
+    div== f.text_area :body
+    div== f.submit

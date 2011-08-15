@@ -10,6 +10,9 @@ WikiPs.controllers :pages do
 		render 'pages/show'
 	end
 
-	get :edit do
+	get :edit, :map => '/:title/edit' do
+		@page = Page.first(:title => params[:title], :order => :created_at.desc) or
+			halt 404
+		render 'pages/edit'
 	end
 end
