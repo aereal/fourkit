@@ -15,4 +15,8 @@ class Page
 	def versions
 		self.class.where(:title => self.title)
 	end
+
+	def children
+		self.class.where(:parent_id => self.id)
+	end
 end
