@@ -19,4 +19,8 @@ class Page
 	def children
 		self.class.where(:parent_id => self.id)
 	end
+
+	def descendant
+		self.children.map {|child| [child, child.descendant] }
+	end
 end
