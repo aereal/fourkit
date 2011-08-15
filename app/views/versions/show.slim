@@ -4,5 +4,6 @@ article id=@page.id
   h1= @page.title
   ==simple_format(@page.body)
   nav.local_nav
+    p== link_to "Fork", url_for(:versions, :fork, :title => @page.title, :id => @page.id)
     p
       time pubdate=@page.created_at =time_ago_in_words(@page.created_at) + ' ago'
