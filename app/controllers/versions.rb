@@ -9,6 +9,11 @@ WikiPs.controllers :versions, :map => '/:title' do
 		render 'versions/show'
 	end
 
+	get :fork, :map => ':id/fork' do
+		@page = Page.find(params[:id])
+		render 'versions/fork'
+	end
+
 	post :create do
 		if @page = Page.create(params[:page])
 			flash[:notice] = "#{@page.title} was successfully posted."
