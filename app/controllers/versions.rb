@@ -15,7 +15,7 @@ WikiPs.controllers :versions, :map => '/:title' do
 	end
 
 	post :create do
-		if @page = Page.create(params[:page])
+		if @page = Page.create(params[:page].merge(:parent => Page.find(params[:parent_id])))
 			flash[:notice] = "#{@page.title} was successfully posted."
 			redirect url_for(:versions, :show, :title => @page.title, :id => @page.id)
 		else
