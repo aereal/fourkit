@@ -20,6 +20,7 @@ gem 'rack-test', :require => "rack/test", :group => "test"
 
 # Padrino
 gem 'padrino', '0.10.1'
+gem 'pry-padrino'
 # Padrino EDGE
 # gem 'padrino', :git => 'git://github.com/padrino/padrino-framework.git'
 #
