@@ -6,6 +6,6 @@ article id=@page.id
   nav.local_nav
     p== link_to "Edit", url_for(:pages, :edit, :title => @page.title)
     p
-      time pubdate=@page.created_at =time_ago_in_words(@page.created_at) + ' ago'
-    ul.versions
-    == partial 'versions/version', :collection => @page.versions
+      time pubdate=@page.revised_at =time_ago_in_words(@page.revised_at) + ' ago'
+    ul.revisions
+    == partial 'revisions/revision', :collection => @page.revisions

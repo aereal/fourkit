@@ -1,0 +1,5 @@
+- @title = ["Revisions", @page.title].join(' | ')
+
+article
+  h1= "Versions of #{@page.title}"
+  == partial 'revisions/revision', :collection => @page.revisions

@@ -1,0 +1,9 @@
+- @title = @page.title
+
+article id=@page.id
+  h1= @page.title
+  ==simple_format(@revision.body)
+  nav.local_nav
+    p== link_to "Fork", url_for(:revisions, :fork, :title => @page.title, :id => @revision.id)
+    p
+      time pubdate=@revision.created_at =time_ago_in_words(@revision.created_at) + ' ago'
