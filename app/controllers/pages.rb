@@ -1,6 +1,6 @@
 WikiPs.controllers :pages do
 	get :index, :map => '/' do
-		@pages = Page.all(:order => :created_at.desc).uniq(&:title)
+		@pages = Page.all(order: :created_at.desc)
 		render 'pages/index'
 	end
 
