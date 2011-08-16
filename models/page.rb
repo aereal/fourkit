@@ -12,4 +12,17 @@ class Page
 			self.save
 		end
 	end
+
+	def latest_revision
+		self.revisions.sort_by(&:created_at).first
+	end
+	alias_method :latest, :latest_revision
+
+	def body
+		self.latest_revision.body
+	end
+
+	def revised_at
+		self.latest_revision.created_at
+	end
 end
