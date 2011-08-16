@@ -5,14 +5,12 @@ WikiPs.controllers :pages do
 	end
 
 	get :show, :map => '/:title' do
-		@page = Page.first(:title => params[:title], :order => :created_at.desc) or
-			halt 404
+		@page = Page.find_by_title(params[:title]) or halt 404
 		render 'pages/show'
 	end
 
 	get :edit, :map => '/:title/edit' do
-		@page = Page.first(:title => params[:title], :order => :created_at.desc) or
-			halt 404
+		@page = Page.find_by_title(params[:title]) or halt 404
 		render 'pages/edit'
 	end
 end
