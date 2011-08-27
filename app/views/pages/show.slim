@@ -4,7 +4,7 @@ article id=@page.id
   h1= @page.title
   ==simple_format(@page.body)
   nav.local_nav
-    p== link_to "Edit", url_for(:pages, :edit, :title => @page.title)
+    p== link_to "Edit", edit_page_url(@page.title)
     p
       time pubdate=@page.revised_at =time_ago_in_words(@page.revised_at) + ' ago'
     ul.revisions

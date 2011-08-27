@@ -1,1 +1,1 @@
-li== link_to revision.created_at, url_for(:revisions, :show, :title => @page.title, :id => revision.id)
+li== link_to revision.created_at, show_rev_url(revision)
