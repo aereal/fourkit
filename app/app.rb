@@ -1,4 +1,4 @@
-class WikiPs < Padrino::Application
+class FourKit < Padrino::Application
 	register SassInitializer
 	register Padrino::Rendering
 	register Padrino::Mailer

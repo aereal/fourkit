@@ -1,4 +1,4 @@
-WikiPs.controllers :pages do
+FourKit.controllers :pages do
 	get :index, :map => '/' do
 		@pages = Page.all(order: :created_at.desc)
 		render 'pages/index'

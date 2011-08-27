@@ -9,5 +9,5 @@ def app
   ##
   # You can handle all padrino applications using instead:
   #   Padrino.application
-  WikiPs.tap { |app|  }
+  FourKit.tap { |app|  }
 end

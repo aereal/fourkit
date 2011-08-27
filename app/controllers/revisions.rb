@@ -1,4 +1,4 @@
-WikiPs.controllers :revisions, :map => '/:title' do
+FourKit.controllers :revisions, :map => '/:title' do
 	get :index do
 		@page = Page.find_by_title(params[:title])
 		render 'revisions/index'
