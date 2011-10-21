@@ -2,7 +2,7 @@
 
 article id=@page.id
   h1= "Edit: #{@page.title}"
-  - form_for @page.latest, create_revision_url(@page.title) do |f|
+  - form_for @page.latest, fork_revision_url(@page.latest) do |f|
     p.error= f.error_messages
     div
       == f.hidden_field :parent_id, :value => @page.latest.id
